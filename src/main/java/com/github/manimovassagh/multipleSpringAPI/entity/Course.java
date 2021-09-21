@@ -23,4 +23,8 @@ public class Course {
     private String courseTitle;
     private Integer credit;
 
+    @OneToOne
+    @JoinColumn(name = "course_material_id",referencedColumnName = "courseMaterialId")
+    private CourseMaterial courseMaterial;
+
 }
