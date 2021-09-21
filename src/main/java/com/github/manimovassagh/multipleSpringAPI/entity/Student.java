@@ -28,7 +28,7 @@ public class Student {
             generator = "student_sequence")
     private Long studentId;
     private String firstName;
-    private String lastname;
+    private String lastName;
     @Column(name = "email_address",nullable = false)
     private String emailId;
     @Embedded

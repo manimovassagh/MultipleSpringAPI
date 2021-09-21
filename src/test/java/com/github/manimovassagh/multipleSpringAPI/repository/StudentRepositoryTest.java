@@ -20,7 +20,7 @@ class StudentRepositoryTest {
     public void saveStudent() {
         Student student = Student.builder().emailId("mani.mgh@gmail.com").
                 firstName("Mani").
-                lastname("Movassagh Ghazani")
+                lastName("Movassagh Ghazani")
                 //guardianName("Jorg").
                 //guardianEmail("jorg@cgi.com").
                 //guardianMobile("99999999")
@@ -39,7 +39,7 @@ class StudentRepositoryTest {
                 .build();
         Student student = Student.builder()
                 .firstName("Sahar")
-                .lastname("Morattab")
+                .lastName("Morattab")
                 .emailId("Sahar@Gmail.com")
                 .guardian(guardian)
                 .build();
@@ -64,10 +64,13 @@ class StudentRepositoryTest {
     public void printStudentByNameContaining(){
         List<Student> students = studentRepository.findByFirstNameContaining("Sah");
         System.out.println("students = " + students);
-
     }
-
-    }
-
+    @Test
+    public void printStudentByLastNameNotNull(){
+    List<Student> students = studentRepository.findByLastNameNotNull();
+        System.out.println("students = " + students);
 }
+
+
+
 }
