@@ -3,6 +3,8 @@ package com.github.manimovassagh.multipleSpringAPI.repository;
 import com.github.manimovassagh.multipleSpringAPI.entity.Guardian;
 import com.github.manimovassagh.multipleSpringAPI.entity.Student;
 import org.junit.jupiter.api.Test;
+import org.junit.platform.commons.logging.Logger;
+import org.junit.platform.commons.logging.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -57,4 +59,15 @@ class StudentRepositoryTest {
         System.out.println("students = " + students);
 
     }
+
+    @Test
+    public void printStudentByNameContaining(){
+        List<Student> students = studentRepository.findByFirstNameContaining("Sah");
+        System.out.println("students = " + students);
+
+    }
+
+    }
+
+}
 }
